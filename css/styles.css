@@ -94,6 +94,7 @@ li,
 #viewer-name,
 #search,
 #select-list-info {
+    margin-top: 5px;
     font-size: 28px;
 }
 
@@ -115,7 +116,7 @@ li,
 
 #search {
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     height: 28px;
     color: white;
     text-align: center;
