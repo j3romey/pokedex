@@ -47,7 +47,7 @@ const arrayAB = ((arrayA, arrayB) => {
 
     mainArray[121].name = 'MR. MIME';
     mainArray[28].name = 'NIDORAN (F)';
-    mainArray[31].name = 'NIRDON (M)';
+    mainArray[31].name = 'NIDORAN (M)';
     mainArray[82].name = `FARFETCH'D`;
 
     mainArray[18].entry = mainArray[18].entry.replace(' ity', 'ity');

@@ -17,7 +17,6 @@
     /* Legacy iOS */
 }
 
-
 /* Page */
 
 html {
@@ -39,61 +38,53 @@ body {
 /* Card */
 
 #card {
-    width: 814.62px;
-    height: 310px;
-    border-radius: 71px 0 0 117px;
     display: flex;
+    overflow: hidden;
     align-items: center;
-    background-color: #2B2121;
+    width: 815px;
+    height: 310px;
+    border-radius: 10px 10px 10px 80px;
+    background-color: rgba(0,0,0,.8);
 }
 
-#card::before {
-    content: '';
+#pokedex {
+    position: relative;
+}
+
+#pokedex::before {
+    content:'';
     background-image: url(../images/pokeball.png);
+    position: absolute;
     background-size: contain;
-    position: fixed;
-    width: 400px;
-    height: 400px;
+    background-repeat: no-repeat;
+    width: 600px;
+    height: 600px;
     z-index: -1;
-    margin-left: -74px;
-    margin-top: -10px;
+    top: -50%;
+    left:-35%;
+    transform: rotate(-30deg);
 }
 
 #dual-panels {
     display: flex;
+    border-top: 3px solid  #d73f48;
+    border-bottom: 3px solid  #e8e8e9;
+    background-color: rgba(69, 67, 68, 0.55);
 }
-
-#dual-panels::before {
-    margin-left: 24px;
-    content: '';
-    position: absolute;
-    width: 790px;
-    border-top: 0.2px solid #878787;
-    z-index: 2;
-}
-
-#dual-panels::after {
-    margin-top: 273px;
-    margin-left: 54px;
-    content: '';
-    position: absolute;
-    width: 760px;
-    border-top: 0.2px solid #878787;
-    z-index: 2;
-}
-
 
 /* Main Panes */
 
 #left {
-    width: 366px;
-    height: 274px;
+    flex: 1 0 20%;
+    padding-left: 4%;
+    padding-right: 2%;
+    display: flex;
+    flex-direction: column;
 }
 
 #right {
-    width: 449px;
-    height: 274px;
-    border-left: 0.2px solid #878787;
+    flex: 0 1 80%;
+    border-left: 1px solid  #878787;
 }
 
 
@@ -103,7 +94,7 @@ li,
 #viewer-name,
 #search,
 #select-list-info {
-    font-size: 27.92px;
+    font-size: 28px;
 }
 
 #viewer-name {
@@ -123,10 +114,9 @@ li,
 }
 
 #search {
-    margin-top: 11px;
-    margin-bottom: 4px;
-    width: 303.69px;
-    height: 28.51px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 28px;
     color: white;
     text-align: center;
     font-family: 'VT323';
@@ -141,11 +131,6 @@ li,
 #poke-select-number {
     margin-left: 14px;
 }
-
-#poke-select-name {
-    margin-left: 34px;
-}
-
 
 /* Scroll Bar */
 
@@ -181,7 +166,7 @@ li,
 
 .simplebar-vertical {
     margin-left: 30px;
-    height: 100px;
+    height: 95%;
     width: 9px;
     border: .4px solid #878787;
     border-radius: 45px;
@@ -207,28 +192,20 @@ li,
 }
 
 li {
-    width: 303.69px;
-    margin: 2px 0;
+    width: 100%;
+    margin: 5px 0;
     box-sizing: border-box;
-    background: #000000;
+    background-color: rgba(0,0,0,.5);
     border: 2px solid #878787;
-    border-radius: 33px;
+    border-radius: 12px;
     text-align: left;
     padding-left: 13px;
     scroll-snap-align: start;
+    color: gray;
 }
 
 li:hover {
-    border-color: #bababa;
-}
-
-li:focus {
-    outline: none;
-    border-color: #bababa;
-}
-
-.poke-item-name {
-    margin-left: 57px;
+    border-color: white;
 }
 
 
@@ -260,7 +237,8 @@ li:focus {
 
 #poke-info,
 #dex-text {
-    padding: 0px 18px;
+    padding: 5px ;
+    margin: 0 18px;
 }
 
 #poke-info {
@@ -268,14 +246,8 @@ li:focus {
     gap: 16px;
 }
 
-#dex-text::before {
-    content: '';
-    position: absolute;
-    width: 413px;
-    border-top: 0.2px solid;
-}
-
 #dex-text {
+    border-top: 1px solid #878787;
     font-size: 18px;
 }
 
@@ -290,8 +262,11 @@ li:focus {
     display: block;
 }
 
-.make-white {
-    border-color: white !important;
+li.make-white {
+    border-color: #d73f48;
+    color: white;
+    outline: none;
+    background: #000000;
 }
 
 
@@ -322,14 +297,6 @@ li:focus {
     #select-list-info,
     #search {
         margin-left: 83px;
-    }
-    #dual-panels::before {
-        margin-left: 5px;
-        width: 437px;
-    }
-    #dual-panels::after {
-        margin-left: 23px;
-        width: 420px;
     }
     #poke-select {
         margin-left: 35px;
